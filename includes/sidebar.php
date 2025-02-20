@@ -3,7 +3,7 @@
 <div class="btnOpen absolute top-11 left-3 hidden max-md:block text-4xl cursor-pointer">
     <button id="btnOpen"><i class="fa-solid fa-bars-staggered cursor-pointer"></i></button>
 </div>
-<div id="sidebar" class="side w-1/6 h-screen p-[2%] bg-[var(--color-background)] absolute top-0 max-md:hidden max-md:w-[45.5%]">
+<div id="sidebar" class="side w-1/6 h-screen p-[2%] bg-[var(--color-background)] absolute top-0 max-md:hidden max-md:w-[45.5%] max-md:fixed max-md:bg-[var(--color-white)]">
     <div id="close" class="close absolute top-3 right-3 hidden max-md:block text-3xl">
     <i class="fa-solid fa-xmark cursor-pointer"></i>
     </div>
