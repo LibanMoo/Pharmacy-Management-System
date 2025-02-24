@@ -1,3 +1,45 @@
+<?php include "./includes/init.php";
+session_start();
+ 
+    if(isset($_POST['btn_login'])){
+       $username = escape($_POST['username']);
+       $password = md5(trim(escape($_POST['password'])));
+
+       $admin = read_where('admins', "username = '{$username}' and password = '{$password}'");
+
+       
+
+       if ($admin){
+        $_SESSION['admin_username'] = $username;
+        $_SESSION['admin_password'] = $password;
+        $_SESSION['admin_id'] = $admin[0]['admin_id'];
+        $is_Login = true;
+
+        // filling the session data
+
+        // getting the local date
+
+        $get_date = new DateTime("now", new DateTimeZone("Africa/Mogadishu"));
+        $date = $get_date->format('Y-m-d');
+        $time = $get_date->format('H:i:s');
+
+        $info = [
+            'user_ref'=> $_SESSION['admin_id'],
+            'username'=>  $_SESSION['admin_username'],
+            'date'=> $date,
+            'time'=> $time
+
+        ];
+
+        insert('login_session', $info);
+
+        header('location: index.php');
+       }
+
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +55,7 @@
         <h2 class="font-semibold">Login</h2>
             <input class="w-full bg-[var(--color-background)] h-[12%] pl-[2%] rounded focus:border-2 focus:border-[var(--color-success)]" type="text" name="username" placeholder="Username">
             <input class="w-full bg-[var(--color-background)] h-[12%] pl-[2%] rounded" type="password" name="password" placeholder="Password">
-            <input class="w-[30%] bg-[var(--color-success)] text-white font-semibold h-[15%] rounded cursor-pointer" type="submit" value="Send" name="send">
+            <input class="w-[30%] bg-[var(--color-success)] text-white font-semibold h-[15%] rounded cursor-pointer max-sm:h-[10%]" type="submit" value="Send" name="btn_login">
         </form>
     </div>
 </body>
