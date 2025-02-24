@@ -1,5 +1,4 @@
-<?php include "./includes/sidebar.php";
-      include "./includes/functions.php";
+<?php include "./includes/init.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">

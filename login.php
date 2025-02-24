@@ -1,5 +1,5 @@
-<?php include "./includes/init.php";
-session_start();
+<?php  session_start();
+     include "./includes/functions.php";
  
     if(isset($_POST['btn_login'])){
        $username = escape($_POST['username']);
@@ -11,9 +11,8 @@ session_start();
 
        if ($admin){
         $_SESSION['admin_username'] = $username;
-        $_SESSION['admin_password'] = $password;
         $_SESSION['admin_id'] = $admin[0]['admin_id'];
-        $is_Login = true;
+        $_SESSION['isLogin']  = true;
 
         // filling the session data
 
@@ -34,6 +33,9 @@ session_start();
         insert('login_session', $info);
 
         header('location: index.php');
+       }
+       else {
+        echo "invalid email or password";
        }
 
     }
