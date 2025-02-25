@@ -10,14 +10,17 @@
        
 
        if ($admin){
+        if (headers_sent()) {
+            die("Headers already sent");
+        }
         $_SESSION['admin_username'] = $username;
         $_SESSION['admin_id'] = $admin[0]['admin_id'];
         $_SESSION['isLogin']  = true;
-
+        
         // filling the session data
 
         // getting the local date
-
+       
         $get_date = new DateTime("now", new DateTimeZone("Africa/Mogadishu"));
         $date = $get_date->format('Y-m-d');
         $time = $get_date->format('H:i:s');
@@ -29,10 +32,13 @@
             'time'=> $time
 
         ];
-
-        insert('login_session', $info);
-
-        header('location: index.php');
+        
+        if (!insert('login_session', $info)) {
+            die("Database insert failed");
+        }
+        
+        header("location: index.php");
+        exit;
        }
        else {
         echo "invalid email or password";
