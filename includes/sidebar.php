@@ -12,11 +12,11 @@
     </div>
     <div class="elements h-[90%] w-[full] rounded  flex flex-col gap-6 text-[var(--color-info-dark)] bg-[var(--color-white)]">
         <div id="admin" class="dashboard h-8 pl-3 rounded flex items-center hover:bg-[var(--color-primary)] hover:text-[var(--color-white)]">
-            <a class="flex gap-2 items-center" href="../index.php"><i class="fa-solid fa-house"></i>
+            <a class="flex gap-2 items-center" href="./index.php"><i class="fa-solid fa-house"></i>
                 <span>Dashboard</span></a>
         </div>
         <div class="Admins h-8 pl-3 rounded flex items-center hover:bg-[var(--color-primary)] hover:text-[var(--color-white)]">
-            <a class="flex gap-2 items-center" href="../index.php"><i class="fa-solid fa-user"></i>
+            <a class="flex gap-2 items-center" href="./admins.php"><i class="fa-solid fa-user"></i>
                 <span>Admins</span></a>
         </div>
         <div class="Customers h-8 focus:bg-slate-400 pl-3 rounded flex items-center">
