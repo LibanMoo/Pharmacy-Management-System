@@ -14,25 +14,32 @@
 <body class="bg-[var(--color-background)]">
     <div class="containerr w-[83%] h-screen ml-[16.6%] max-md:ml-0 max-md:w-full">
         <div class="">
-        <div class="admin w-[13%] h-[6%] bg-[var(--color-primary)] flex items-center justify-center rounded hover:cursor-pointer ">
+        <div class="admin w-[13%] h-[7%] bg-[var(--color-primary)] flex items-center justify-center rounded hover:cursor-pointer ">
                 <button class="hover:cursor-pointer text-[var(--color-white)] text-bold">Add Admin</button>
             </div>
     <table id="myTable" class="display">
     <thead>
         <tr>
-            <th>Column 1</th>
-            <th>Column 2</th>
+            <th>Username</th>
+            <th>Name</th>
+            <th>Role </th>
+            <th>Date</th>
+            <th>Time</th>
         </tr>
     </thead>
     <tbody>
+        <?php foreach (read('admins') as $admin){
+
+         ?>
         <tr>
-            <td>Hello</td>
-            <td>Hello</td>
+            <td><?= $admin['username'];?></td>
+            <td><?= $admin['admin_name']?></td>
+            <td><?= $admin['role']?></td>
+            <td><?= $admin['date']?></td>
+            <td><?= $admin['time']?></td>
+            
         </tr>
-        <tr>
-            <td>Row 2 Data 1</td>
-            <td>Row 2 Data 2</td>
-        </tr>
+        <?php };?>
     </tbody>
 </table>
 </div>
