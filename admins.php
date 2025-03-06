@@ -6,8 +6,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="output.css">
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@9.0.3"></script>
+    <link rel="stylesheet" href="./lib/datatables/dataTables.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -33,6 +32,13 @@
         </tr>
     </tbody>
 </table>
+<script src="./lib/jquery/jquery-3.7.1.js"></script>
+<script src="./lib/datatables/dataTables.js"></script>
+<script>
+    $(document).ready( function () {
+    $('#myTable').DataTable();
+} );
+</script>
     </div>
 </body>
 </html>
