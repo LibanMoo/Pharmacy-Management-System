@@ -9,7 +9,7 @@
         <i class="fa-solid fa-moon"></i>
         </div>
     </div>
-    <div class="flex gap-8 bg-blue-400">
+    <div class="flex gap-8">
     <div class="text flex flex-col text-[var(--info-dark)]">
         <span><?= $_SESSION['admin_username'] ?></span>
         <span><?= $_SESSION['admin_role'] ?></span>
