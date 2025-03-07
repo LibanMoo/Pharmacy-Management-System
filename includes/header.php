@@ -11,8 +11,8 @@
     </div>
     <div class="flex gap-8 bg-blue-400">
     <div class="text flex flex-col text-[var(--info-dark)]">
-        <span>Liban</span>
-        <span>Admin</span>
+        <span><?= $_SESSION['admin_username'] ?></span>
+        <span><?= $_SESSION['admin_role'] ?></span>
         </div>
         <img class="w-14 h-14 rounded-full" src="../bird-colorful-gradient-design-vector_343694-2506.avif" alt="">
         
