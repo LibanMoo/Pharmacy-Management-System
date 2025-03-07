@@ -12,9 +12,9 @@
     <title>Document</title>
 </head>
 <body class="bg-[var(--color-background)]">
-    <div class="containerr w-[83%] h-screen ml-[16.6%] max-md:ml-0 max-md:w-full">
+    <div class="containerr w-[83%] h-screen ml-[16.6%] max-md:ml-0 max-md:w-full max-md:pl-[3%]">
         <div class="">
-        <div class="admin w-[13%] h-[7%] bg-[var(--color-primary)] flex items-center justify-center rounded hover:cursor-pointer ">
+        <div class="admin w-[13%] h-[7%] bg-[var(--color-primary)] flex items-center justify-center rounded hover:cursor-pointer max-md:w-[30%] ">
                 <button class="hover:cursor-pointer text-[var(--color-white)] text-bold">Add Admin</button>
             </div>
     <table id="myTable" class="display">
