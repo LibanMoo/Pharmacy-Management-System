@@ -15,6 +15,7 @@
         }
         $_SESSION['admin_username'] = $username;
         $_SESSION['admin_id'] = $admin[0]['admin_id'];
+        $_SESSION['admin_role'] = $admin[0]['role'];
         $_SESSION['isLogin']  = true;
         
         // filling the session data
