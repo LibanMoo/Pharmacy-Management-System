@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
 <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.min.css" />
 <link rel="stylesheet" href="../output.css">
 
 <!-- This is an example component -->
-<div class="w-full h-screen flex justify-center items-center bg-black bg-opacity-50">
+<div class="w-full h-screen fixed top-0 left-0 z-10 flex justify-center items-center bg-black bg-opacity-50">
  
     <!-- Modal toggle -->
     <!-- <button class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button" data-modal-toggle="authentication-modal">
@@ -50,5 +42,3 @@
         </div>
 
 <!-- <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script> -->
-</body>
-</html>
