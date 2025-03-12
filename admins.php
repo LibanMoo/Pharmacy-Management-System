@@ -18,7 +18,7 @@
         <div class="admin w-[13%] h-[7%] bg-[var(--color-primary)] flex items-center justify-center rounded hover:cursor-pointer max-sm:w-[35%] max-md:w-[25%] ">
                 <button onclick="callModal()" class="hover:cursor-pointer text-[var(--color-white)] text-bold">Add Admin</button>
             </div>
-    <table id="myTable" class="display">
+    <table id="myTable" class="">
     <thead>
         <tr>
             <th>Username</th>
@@ -39,9 +39,11 @@
             <td><?= $admin['role']?></td>
             <td><?= $admin['date']?></td>
             <td><?= $admin['time']?></td>
-            <td><i class="fa-solid fa-pen-to-square"></i></td>
-            <td><?= $admin['time']?></td>
-            
+            <td class="flex h-full gap-5 text-3xl max-md:text-4xl max-sm:text-5xl "> <div class="edit text-[var(--color-primary)] cursor-pointer"><i class="fa-solid fa-pen-to-square"></i></div>
+            <div class="delete text-[var(--color-danger)] cursor-pointer">
+            <i class="fa-solid fa-trash"></i>
+            </div>
+        </td>
         </tr>
         <?php };?>
     </tbody>
@@ -54,7 +56,15 @@
 <script src="./lib/datatables/dataTables.js"></script>
 <script>
     $(document).ready( function () {
-    $('#myTable').DataTable();
+    $('#myTable').DataTable({
+        pagingType: 'full',
+        language: {
+            searchPlaceholder: "...search"
+        }
+
+
+    });
+
 } );
 
 const modalBox = $('#modalBox');
