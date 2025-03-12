@@ -7,6 +7,7 @@
 <head>
     <link rel="stylesheet" href="output.css">
     <link rel="stylesheet" href="./lib/datatables/dataTables.css">
+    <script src="https://kit.fontawesome.com/4be9701c6b.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -25,6 +26,7 @@
             <th>Role </th>
             <th>Date</th>
             <th>Time</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -36,6 +38,8 @@
             <td><?= $admin['admin_name']?></td>
             <td><?= $admin['role']?></td>
             <td><?= $admin['date']?></td>
+            <td><?= $admin['time']?></td>
+            <td><i class="fa-solid fa-pen-to-square"></i></td>
             <td><?= $admin['time']?></td>
             
         </tr>
@@ -61,6 +65,13 @@ function callModal(){
         type: 'POST',
         success: function (data){
             modalBox.html(data)
+            // let modalContainer = $('#modalContainer');
+            // console.log(modalContainer)
+            console.log($('#close'))
+            $('#close1').click(function (){
+                console.log("You clicked me")
+                $('#modalContainer').hide();
+            })
             console.log("reached in the modal")
         },
 
