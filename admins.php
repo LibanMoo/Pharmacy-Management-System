@@ -1,6 +1,20 @@
 <?php include './includes/init.php';
       include './includes/header.php';
       include './includes/sidebar.php';
+
+
+  if (isset($_POST['send'])){
+    $get_date = new DateTime("now", new DateTimeZone("Africa/Mogadishu"));
+    $date = $get_date->format('Y-m-d');
+    $time = $get_date->format('H:i:s');
+
+
+    $username = escape($_POST['username']);
+    $name = escape($_POST['name']);
+    $password = trim(escape(md5($_POST['password'])));
+    $currentDate = $date;
+    $currentTime = $time;
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
