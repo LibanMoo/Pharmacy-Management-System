@@ -53,7 +53,8 @@
     $('#myTable').DataTable();
 } );
 
-const modalBox = $('modalBox');
+const modalBox = $('#modalBox');
+console.log(modalBox)
 function callModal(){
     $.ajax({
         url:'./modals/adminModal.php',

@@ -33,7 +33,7 @@
             'time'=> $time
 
         ];
-        insert('login_session', $info);
+        
         if (!insert('login_session', $info)) {
             die("Database insert failed");
         }

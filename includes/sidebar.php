@@ -53,7 +53,7 @@
         const btnOpen = document.querySelector('#btnOpen'),
       sideBar = document.querySelector('#sidebar'),
       btnClose = document.querySelector('#close');
-      console.log(sideBar);
+    //   console.log(sideBar);
       
 
 btnOpen.addEventListener('click', (e)=>{
