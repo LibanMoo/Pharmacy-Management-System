@@ -4,6 +4,21 @@
 
 
   if (isset($_POST['send'])){
+    function randomPassword() {
+        $alphabet = '1234567890';
+        $pass = array(); //remember to declare $pass as an array
+        $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+        for ($i = 0; $i < 8; $i++) {
+            $n = rand(0, $alphaLength);
+            $pass[] = $alphabet[$n];
+        }
+        
+        $stringfiedPass = implode($pass); //turn the array into a string
+        
+    }
+
+    $generatedPass = randomPassword();
+ 
     $get_date = new DateTime("now", new DateTimeZone("Africa/Mogadishu"));
     $date = $get_date->format('Y-m-d');
     $time = $get_date->format('H:i:s');
@@ -11,9 +26,11 @@
 
     $username = escape($_POST['username']);
     $name = escape($_POST['name']);
-    $password = trim(escape(md5($_POST['password'])));
+    $role = escape($_POST['role']);
+    $hashedPass = md5($generatedPass);
     $currentDate = $date;
     $currentTime = $time;
+
   }
 ?>
 <!DOCTYPE html>
