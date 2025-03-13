@@ -15,7 +15,6 @@ include "./includes/sidebar.php";
 </head>
 <body class="bg-[var(--color-background)] overflow-x-hidden">
   <div class="containerr ml-[16.6%] w-full h-screen flex bg-[var(--color-background)] max-md:ml-0">
-  </div>
   <div class="content w-[84%] flex flex-col gap-[10%] max-md:w-[100%] max-md:justify-center">
    <div class="chart flex gap-[4%] max-md:flex-col max-md:justify-center ">
   <div class="canvas shadow-md p-[2%] rounded w-[50%] max-md:w-[95%]">
@@ -85,7 +84,6 @@ include "./includes/sidebar.php";
     <h3 class="text-center mb-[5px] hover:underline"><a href="#">Read More...</a></h3>
 </div>
 </div>
-  </div>
   </div>
 
 <script src="./includes/script.js"></script>

@@ -1,6 +1,5 @@
 <?php include './includes/init.php';
       include './includes/header.php';
-      include './includes/sidebar.php';
 
 
   if (isset($_POST['send'])){
@@ -44,8 +43,9 @@
     <title>Document</title>
 </head>
 <body class="bg-[var(--color-background)]">
-    <div class="containerr w-[83%] h-screen ml-[17%] max-md:ml-0 max-md:w-full max-md:pl-[3%]">
-        <div class="">
+    <div class="containerr w-[100%] h-screen  max-md:ml-0 max-md:w-full max-md:pl-[3%] flex">
+        <div class="sidebar"><?= include './includes/sidebar.php';?></div>
+        <div class="content w-full ml-[16.6%] max-md:ml-0">
         <div class="admin w-[13%] h-[7%] bg-[var(--color-primary)] flex items-center justify-center rounded hover:cursor-pointer max-sm:w-[35%] max-md:w-[25%] ">
                 <button onclick="callModal()" class="hover:cursor-pointer text-[var(--color-white)] text-bold">Add Admin</button>
             </div>
@@ -82,7 +82,6 @@
 </div>
 <div class="modalBox" id="modalBox"></div>
 </div>
-.
 <script src="./lib/jquery/jquery-3.7.1.js"></script>
 <script src="./lib/datatables/dataTables.js"></script>
 <script>
