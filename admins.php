@@ -22,15 +22,21 @@
     $date = $get_date->format('Y-m-d');
     $time = $get_date->format('H:i:s');
 
-
-    $username = escape($_POST['username']);
-    $name = escape($_POST['name']);
-    $role = escape($_POST['role']);
-    $hashedPass = md5($generatedPass);
-    $currentDate = $date;
-    $currentTime = $time;
+    $info = [
+    
+    'username' => escape($_POST['username']),
+    'name' => escape($_POST['name']),
+    'role' => escape($_POST['role']),
+    'password' => md5($generatedPass),
+    'date' => $date,
+    'time' => $time
+    ];
 
   }
+
+  if (insert('admins', $info)) {
+   
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
