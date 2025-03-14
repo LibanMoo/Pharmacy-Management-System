@@ -25,18 +25,18 @@
     $info = [
     
     'username' => escape($_POST['username']),
-    'name' => escape($_POST['name']),
+    'admin_name' => escape($_POST['name']),
     'role' => escape($_POST['role']),
     'password' => md5($generatedPass),
     'date' => $date,
     'time' => $time
     ];
-
+    if (insert('admins', $info)) {
+   
+    }
   }
 
-  if (insert('admins', $info)) {
-   
-}
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
