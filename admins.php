@@ -12,7 +12,7 @@
             $pass[] = $alphabet[$n];
         }
         
-        $stringfiedPass = implode($pass); //turn the array into a string
+        return implode($pass); //turn the array into a string
         
     }
 
