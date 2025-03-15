@@ -32,7 +32,17 @@
     'time' => $time
     ];
     if (insert('admins', $info)) {
-   
+       echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'> </script>";
+       echo " <script> Swal.fire({
+  position: 'top-center',
+  icon: 'success',
+  title: 'Your work has been saved',
+  showConfirmButton: false,
+  timer: 1500
+});
+</script>";
+
+       
     }
   }
 
@@ -87,6 +97,7 @@
 </table>
 </div>
 <div class="modalBox" id="modalBox"></div>
+<div class="notifications"></div>
 </div>
 <script src="./lib/jquery/jquery-3.7.1.js"></script>
 <script src="./lib/datatables/dataTables.js"></script>
@@ -125,6 +136,11 @@ function callModal(){
              console.log(`Here is the error: ${error}`)
         }
     });
+}
+
+function notification (message, color){
+    let content = document.querySelector(".notification");
+    content.innerHTML("")
 }
 </script>
    
