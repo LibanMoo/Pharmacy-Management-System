@@ -37,6 +37,7 @@ if (isset($_POST['send'])) {
         echo " <script> Swal.fire({
   position: 'top',
   icon: 'success',
+  text: 'admin Password is:$generatedPass',
   title: 'Your work has been saved',
   showConfirmButton: true,
   timer: 30000
