@@ -34,7 +34,7 @@
     if (insert('admins', $info)) {
        echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'> </script>";
        echo " <script> Swal.fire({
-  position: 'top-center',
+  position: 'top',
   icon: 'success',
   title: 'Your work has been saved',
   showConfirmButton: false,
