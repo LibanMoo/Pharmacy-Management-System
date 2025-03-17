@@ -89,7 +89,7 @@ if (isset($_POST['send'])) {
                             <td><?= $admin['date'] ?></td>
                             <td><?= $admin['time'] ?></td>
                             <td class="flex h-full gap-5 text-3xl max-md:text-4xl max-sm:text-5xl ">
-                                <div class="edit text-[var(--color-primary)] cursor-pointer"><i class="fa-solid fa-pen-to-square"></i></div>
+                                <div class="edit text-[var(--color-primary)] cursor-pointer"><i onclick="callModal();fillForm(<?= $admin['admin_id']; ?>);)" class="fa-solid fa-pen-to-square"></i></div>
                                 <div class="delete text-[var(--color-danger)] cursor-pointer">
                                     <i class="fa-solid fa-trash"></i>
                                 </div>
@@ -141,6 +141,32 @@ if (isset($_POST['send'])) {
                 }
             });
         }
+        function fillForm(id) {
+        $('#addAdmin').text('Update Admin');
+        $('#action').val('update');
+        $('#id').val(id);
+        $.ajax({
+            url: "../includes/ajax.php",
+            method: "post",
+            data: {
+                table: "admins",
+                id: id,
+                action: "update"
+            },
+            success: function(result) {
+                //   console.log(result);
+                const info = JSON.parse(result)
+                document.getElementById('username').value = info.username;
+                document.getElementById('name').value = info.name;
+                document.getElementById('role').value = info.role;
+    
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        })
+
+    }
 
         function notification(message, color) {
             let content = document.querySelector(".notification");
