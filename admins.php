@@ -89,7 +89,7 @@ if (isset($_POST['send'])) {
                             <td><?= $admin['date'] ?></td>
                             <td><?= $admin['time'] ?></td>
                             <td class="flex h-full gap-5 text-3xl max-md:text-4xl max-sm:text-5xl ">
-                                <div class="edit text-[var(--color-primary)] cursor-pointer"><i onclick="callModal();fillForm(<?= $admin['admin_id']; ?>);)" class="fa-solid fa-pen-to-square"></i></div>
+                                <div class="edit text-[var(--color-primary)] cursor-pointer"><i onclick="callModal();fillForm(<?= $admin['admin_id']; ?>);" class="fa-solid fa-pen-to-square"></i></div>
                                 <div class="delete text-[var(--color-danger)] cursor-pointer">
                                     <i class="fa-solid fa-trash"></i>
                                 </div>
@@ -142,6 +142,7 @@ if (isset($_POST['send'])) {
             });
         }
         function fillForm(id) {
+            console.log("the target")
         $('#addAdmin').text('Update Admin');
         $('#action').val('update');
         $('#id').val(id);
