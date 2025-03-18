@@ -58,6 +58,17 @@ if (isset($_POST['send'])) {
             'time' => $time
 
         ];
+        if(update('admins', $info)){
+            echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'> </script>";
+            echo " <script> Swal.fire({
+      position: 'top',
+      icon: 'success',
+      title: 'Your work has been saved',
+      showConfirmButton: true,
+      timer: 5000
+    });
+    </script>";
+        }
 }
 }
 
