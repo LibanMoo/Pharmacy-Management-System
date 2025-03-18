@@ -3,6 +3,13 @@ include './includes/header.php';
 
 
 if (isset($_POST['send'])) {
+    $get_date = new DateTime("now", new DateTimeZone("Africa/Mogadishu"));
+    $date = $get_date->format('Y-m-d');
+    $time = $get_date->format('H:i:s');
+
+    if($_POST['action' == 'insert']){
+
+    
     function randomPassword()
     {
         $alphabet = '1234567890';
@@ -18,10 +25,6 @@ if (isset($_POST['send'])) {
     }
 
     $generatedPass = randomPassword();
-
-    $get_date = new DateTime("now", new DateTimeZone("Africa/Mogadishu"));
-    $date = $get_date->format('Y-m-d');
-    $time = $get_date->format('H:i:s');
 
     $info = [
 
@@ -44,6 +47,18 @@ if (isset($_POST['send'])) {
 });
 </script>";
     }
+}
+    else if($_POST['action']== 'update'){
+        $info = [
+
+            'username' => escape($_POST['username']),
+            'admin_name' => escape($_POST['name']),
+            'role' => escape($_POST['role']),
+            'date' => $date,
+            'time' => $time
+
+        ];
+}
 }
 
 
