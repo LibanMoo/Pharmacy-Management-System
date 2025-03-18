@@ -174,6 +174,7 @@ if (isset($_POST['send'])) {
         $('#addAdmin').text('Update Admin');
         $('#action').val('update');
         $('#id').val(id);
+        $('#register').text("Update Admin");
     //    let addadmin = $("#addAdmin1");
     //    console.log(`here is the result:${addamin}`);
         // document.getElementById('addAdmin1').textContent('Update Admin');
