@@ -171,11 +171,11 @@ if (isset($_POST['send'])) {
         }
         function fillForm(id) {
             console.log(id);
-        // $('#addAdmin').text('Update Admin');
-        // $('#action').val('update');
-        // $('#id').val(id);
-       let addadmin = $('#addAdmin');
-       console.log(`here is the result:${addamin}`);
+        $('#addAdmin').text('Update Admin');
+        $('#action').val('update');
+        $('#id').val(id);
+    //    let addadmin = $("#addAdmin1");
+    //    console.log(`here is the result:${addamin}`);
         // document.getElementById('addAdmin1').textContent('Update Admin');
        
         $.ajax({
