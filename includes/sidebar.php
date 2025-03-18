@@ -57,10 +57,10 @@
       
 
 btnOpen.addEventListener('click', (e)=>{
-    console.log('reached here');
+    // console.log('reached here');
     sideBar.classList.remove('max-md:hidden');
     btnOpen.classList.add('max-md:hidden');
-    console.log('reached here too');
+    // console.log('reached here too');
     
 })
 

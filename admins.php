@@ -129,7 +129,7 @@ if (isset($_POST['send'])) {
         <div class="modalBox" id="modalBox"></div>
         <div class="notifications"></div>
     </div>
-    <script src="./lib/jquery/jquery-3.7.1.js"></script>
+    <script src="./lib/jquery/jquery.min.js"></script>
     <script src="./lib/datatables/dataTables.js"></script>
     <script>
         $(document).ready(function() {
@@ -151,6 +151,7 @@ if (isset($_POST['send'])) {
             $.ajax({
                 url: './modals/adminModal.php',
                 type: 'POST',
+                async: false,
                 success: function(data) {
                     modalBox.html(data)
                     // let modalContainer = $('#modalContainer');
@@ -160,7 +161,7 @@ if (isset($_POST['send'])) {
                         // console.log("You clicked me")
                         $('#modalContainer').hide();
                     })
-                    // console.log("reached in the modal")
+                    console.log("reached in the modal")
                 },
 
                 error: function(error) {
@@ -169,10 +170,13 @@ if (isset($_POST['send'])) {
             });
         }
         function fillForm(id) {
-            console.log("the target")
-        $('#addAdmin1').text('Update Admin');
-        $('#action1').val('update');
-        $('#id1').val(id);
+            console.log(id);
+        // $('#addAdmin').text('Update Admin');
+        // $('#action').val('update');
+        // $('#id').val(id);
+       let addadmin = $('#addAdmin');
+       console.log(`here is the result:${addamin}`);
+        // document.getElementById('addAdmin1').textContent('Update Admin');
        
         $.ajax({
             url: "./includes/ajax.php",
@@ -186,6 +190,7 @@ if (isset($_POST['send'])) {
             success: function(result) {
                   
                 //   console.log(result);
+                console.log('reached the info modals')
                 const info = JSON.parse(result)
                 console.log('reached here');
                 document.getElementById('username').value = info.username;
