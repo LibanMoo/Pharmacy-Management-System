@@ -130,10 +130,10 @@ if (isset($_POST['send'])) {
                     // console.log(modalContainer)
                     console.log($('#close'))
                     $('#close1').click(function() {
-                        console.log("You clicked me")
+                        // console.log("You clicked me")
                         $('#modalContainer').hide();
                     })
-                    console.log("reached in the modal")
+                    // console.log("reached in the modal")
                 },
 
                 error: function(error) {
@@ -146,17 +146,21 @@ if (isset($_POST['send'])) {
         $('#addAdmin').text('Update Admin');
         $('#action').val('update');
         $('#id').val(id);
+       
         $.ajax({
-            url: "../includes/ajax.php",
+            url: "./includes/ajax.php",
             method: "post",
             data: {
                 table: "admins",
                 id: id,
                 action: "update"
             },
+          
             success: function(result) {
+                  
                 //   console.log(result);
                 const info = JSON.parse(result)
+                console.log('reached here');
                 document.getElementById('username').value = info.username;
                 document.getElementById('name').value = info.name;
                 document.getElementById('role').value = info.role;
