@@ -162,7 +162,7 @@ if (isset($_POST['send'])) {
                 const info = JSON.parse(result)
                 console.log('reached here');
                 document.getElementById('username').value = info.username;
-                document.getElementById('name').value = info.name;
+                document.getElementById('name').value = info.admin_name;
                 document.getElementById('role').value = info.role;
     
             },
