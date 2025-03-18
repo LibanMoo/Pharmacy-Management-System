@@ -7,8 +7,9 @@ if (isset($_POST['send'])) {
     $date = $get_date->format('Y-m-d');
     $time = $get_date->format('H:i:s');
 
-    if($_POST['action' == 'insert']){
-
+    if($_POST['action'] == 'insert'){
+    
+        // echo "<script> console.log('reached here')";
     
     function randomPassword()
     {
@@ -169,9 +170,9 @@ if (isset($_POST['send'])) {
         }
         function fillForm(id) {
             console.log("the target")
-        $('#addAdmin').text('Update Admin');
-        $('#action').val('update');
-        $('#id').val(id);
+        $('#addAdmin1').text('Update Admin');
+        $('#action1').val('update');
+        $('#id1').val(id);
        
         $.ajax({
             url: "./includes/ajax.php",
