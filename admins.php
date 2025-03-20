@@ -207,11 +207,33 @@ if (isset($_POST['send'])) {
         })
 
     }
+    function deleteModal() {
+            $.ajax({
+                url: './modals/deleteModal.php',
+                type: 'POST',
+                async: false,
+                success: function(data) {
+                    modalBox.html(data)
+                    // let modalContainer = $('#modalContainer');
+                    // console.log(modalContainer)
+                    console.log($('#close'))
+                    $('#close').click(function() {
+                        // console.log("You clicked me")
+                        $('#modalContainer').hide();
+                    })
+                    console.log("reached in the modal")
+                },
 
-        function notification(message, color) {
-            let content = document.querySelector(".notification");
-            content.innerHTML("")
+                error: function(error) {
+                    console.log(`Here is the error: ${error}`)
+                }
+            });
         }
+
+        // function notification(message, color) {
+        //     let content = document.querySelector(".notification");
+        //     content.innerHTML("")
+        // }
     </script>
 
 </body>
