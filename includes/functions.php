@@ -33,7 +33,7 @@ function insert($table, $data)
   $result =  $stm->execute($data);
   return $result ? true : false;
 }
-function update($table, $data,)
+function update($table, $data, $id)
 {
   global $conn;
 
@@ -43,11 +43,22 @@ function update($table, $data,)
     $pairs[] = $k . "=:" . $k;
   }
   $keyEqualColonKey = implode(',', $pairs);
+  // echo $keyEqualColonKey;
   $sql = "update $table set $keyEqualColonKey where admin_id=:id";
   $stm = $conn->prepare($sql);
+  $data ['id'] = $id;
   $result =  $stm->execute($data);
   return $result ? true : false;
 }
+// function update_admin ($table, $data){
+//   // foreach (array_keys($data) as $k){
+//   //   $pairs [] = $k . "=:" . $k;
+//   // }
+//   // $keyEqualColonKey = implode(',', $pairs);
+
+//   $sql = "update $table set (admin_ where admin_id=:id";
+
+// }
 function update_where($table, $data, $where) {
   // Ensure we have data to update
   global $conn;

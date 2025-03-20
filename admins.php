@@ -28,7 +28,7 @@ if (isset($_POST['send'])) {
     $generatedPass = randomPassword();
 
     $info = [
-
+        'admin_id' => $_POST['id'],
         'username' => escape($_POST['username']),
         'admin_name' => escape($_POST['name']),
         'role' => escape($_POST['role']),
@@ -51,7 +51,6 @@ if (isset($_POST['send'])) {
 }
     else if($_POST['action']== 'update'){
         $id = trim(escape($_POST['id']));
-        $where = `admin_id = $id`;
         $info = [
             'username' => escape($_POST['username']),
             'admin_name' => escape($_POST['name']),
@@ -61,9 +60,9 @@ if (isset($_POST['send'])) {
 
         ];
         echo "<script> console.log('reached this line' </script>";
-        if(update_where('admins', $info, $where)){
+        if(update('admins', $info, $id)){
             echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'> </script>";
-            echo "console.log('reached the update function'";
+            // echo "console.log('reached the update function'";
             echo " <script> Swal.fire({
       position: 'top',
       icon: 'success',
