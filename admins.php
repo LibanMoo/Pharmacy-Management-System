@@ -50,8 +50,9 @@ if (isset($_POST['send'])) {
     }
 }
     else if($_POST['action']== 'update'){
+        $id = trim(escape($_POST['id']));
+        $where = `admin_id = $id`;
         $info = [
-
             'username' => escape($_POST['username']),
             'admin_name' => escape($_POST['name']),
             'role' => escape($_POST['role']),
@@ -59,8 +60,10 @@ if (isset($_POST['send'])) {
             'time' => $time
 
         ];
-        if(update('admins', $info)){
+        echo "console.log('reached this line'";
+        if(update_where('admins', $info, $where)){
             echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'> </script>";
+            echo "console.log('reached the update function'";
             echo " <script> Swal.fire({
       position: 'top',
       icon: 'success',

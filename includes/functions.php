@@ -33,7 +33,7 @@ function insert($table, $data)
   $result =  $stm->execute($data);
   return $result ? true : false;
 }
-function update($table, $data)
+function update($table, $data, $id)
 {
   global $conn;
 
@@ -43,11 +43,70 @@ function update($table, $data)
     $pairs[] = $k . "=:" . $k;
   }
   $keyEqualColonKey = implode(',', $pairs);
-  $sql = "update $table set $keyEqualColonKey where id=:id";
+  $sql = "update $table set $keyEqualColonKey where admin_id=:$id";
   $stm = $conn->prepare($sql);
   $result =  $stm->execute($data);
   return $result ? true : false;
 }
+function update_where($table, $data, $where) {
+  // Ensure we have data to update
+  global $conn;
+  if (empty($data) || empty($where)) {
+      return false;
+  }
+
+  // Create SET part of SQL dynamically
+  $setParts = [];
+  $values = [];
+
+  foreach ($data as $column => $value) {
+      $setParts[] = "`$column` = ?";
+      $values[] = $value;
+  }
+
+  $setClause = implode(", ", $setParts);
+
+  // Create WHERE clause dynamically
+  $whereParts = [];
+  $whereValues = [];
+
+  foreach ($where as $column => $value) {
+      $whereParts[] = "`$column` = ?";
+      $whereValues[] = $value;
+  }
+
+  $whereClause = implode(" AND ", $whereParts);
+
+  // Combine values for binding
+  $values = array_merge($values, $whereValues);
+
+  // Prepare SQL
+  $sql = "UPDATE `$table` SET $setClause WHERE $whereClause";
+
+  $stmt = $conn->prepare($sql);
+  
+  // Dynamically bind parameters
+  $types = str_repeat("s", count($values)); // Generate type string
+$params = array_merge([$types], $values); // Merge types with values
+
+// Convert values into references
+$refs = [];
+foreach ($params as $key => $value) {
+    $refs[$key] = &$params[$key];
+}
+
+// Use call_user_func_array to bind parameters correctly
+$stmt = call_user_func_array([$stmt, "bind_param"], $refs);
+  
+
+  // Execute and check success
+  if ($stmt->execute()) {
+      return true;
+  } else {
+      return false;
+  }
+}
+
 function updatePassword ($table, $id, $input){
 
   global $conn;
