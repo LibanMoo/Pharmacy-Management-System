@@ -38,7 +38,7 @@ if (isset($_POST['send'])) {
     ];
     if (insert('admins', $info)) {
         echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'> </script>";
-        echo " <script> Swal.fire({
+        echo "<script> Swal.fire({
   position: 'top',
   icon: 'success',
   text: 'admin Password is:$generatedPass',
@@ -60,7 +60,7 @@ if (isset($_POST['send'])) {
             'time' => $time
 
         ];
-        echo "console.log('reached this line'";
+        echo "<script> console.log('reached this line' </script>";
         if(update_where('admins', $info, $where)){
             echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'> </script>";
             echo "console.log('reached the update function'";
@@ -118,7 +118,7 @@ if (isset($_POST['send'])) {
                             <td><?= $admin['role'] ?></td>
                             <td><?= $admin['date'] ?></td>
                             <td><?= $admin['time'] ?></td>
-                            <td class="flex h-full gap-5 text-3xl max-md:text-4xl max-sm:text-5xl ">
+                            <td class="flex h-full gap-5 text-3xl">
                                 <div class="edit text-[var(--color-primary)] cursor-pointer"><i onclick="callModal();fillForm(<?= $admin['admin_id']; ?>);" class="fa-solid fa-pen-to-square"></i></div>
                                 <div class="delete text-[var(--color-danger)] cursor-pointer">
                                     <i class="fa-solid fa-trash"></i>

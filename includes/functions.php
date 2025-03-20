@@ -33,7 +33,7 @@ function insert($table, $data)
   $result =  $stm->execute($data);
   return $result ? true : false;
 }
-function update($table, $data, $id)
+function update($table, $data,)
 {
   global $conn;
 
@@ -43,7 +43,7 @@ function update($table, $data, $id)
     $pairs[] = $k . "=:" . $k;
   }
   $keyEqualColonKey = implode(',', $pairs);
-  $sql = "update $table set $keyEqualColonKey where admin_id=:$id";
+  $sql = "update $table set $keyEqualColonKey where admin_id=:id";
   $stm = $conn->prepare($sql);
   $result =  $stm->execute($data);
   return $result ? true : false;
@@ -98,13 +98,14 @@ foreach ($params as $key => $value) {
 // Use call_user_func_array to bind parameters correctly
 $stmt = call_user_func_array([$stmt, "bind_param"], $refs);
   
+$stmt->excute();
 
   // Execute and check success
-  if ($stmt->execute()) {
-      return true;
-  } else {
-      return false;
-  }
+  // if ($stmt->execute()) {
+  //     return true;
+  // } else {
+  //     return false;
+  // }
 }
 
 function updatePassword ($table, $id, $input){
