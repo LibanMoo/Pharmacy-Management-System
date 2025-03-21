@@ -216,7 +216,7 @@ if (isset($_POST['send'])) {
                     modalBox.html(data)
                     // let modalContainer = $('#modalContainer');
                     // console.log(modalContainer)
-                    console.log($('#close'))
+                    // console.log($('#close'))
                     $('#close1').click(function() {
                         console.log("You clicked me")
                         $('#modalContainer').hide();
@@ -228,6 +228,9 @@ if (isset($_POST['send'])) {
                     console.log(`Here is the error: ${error}`)
                 }
             });
+        }
+       function fillDeleteForm(id, username){
+
         }
 
         // function notification(message, color) {
