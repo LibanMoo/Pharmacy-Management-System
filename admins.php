@@ -120,7 +120,7 @@ if (isset($_POST['send'])) {
                             <td class="flex h-full gap-5 text-3xl">
                                 <div class="edit text-[var(--color-primary)] cursor-pointer"><i onclick="callModal();fillForm(<?= $admin['admin_id']; ?>);" class="fa-solid fa-pen-to-square"></i></div>
                                 <div class="delete text-[var(--color-danger)] cursor-pointer">
-                                    <i class="fa-solid fa-trash"></i>
+                                    <i onclick="deleteModal()" class="fa-solid fa-trash"></i>
                                 </div>
                             </td>
                         </tr>
