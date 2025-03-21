@@ -217,8 +217,8 @@ if (isset($_POST['send'])) {
                     // let modalContainer = $('#modalContainer');
                     // console.log(modalContainer)
                     console.log($('#close'))
-                    $('#close').click(function() {
-                        // console.log("You clicked me")
+                    $('#close1').click(function() {
+                        console.log("You clicked me")
                         $('#modalContainer').hide();
                     })
                     console.log("reached in the modal")
