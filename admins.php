@@ -75,7 +75,7 @@ if (isset($_POST['send'])) {
 }
 }
 if (isset($_POST['btn_delete'])){
-    $id = intval($_POST['id']);
+    $id =($_POST['id']);
     // echo gettype($id);
     if (delete('admins', $id)){
             echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'> </script>";
