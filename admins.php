@@ -74,6 +74,23 @@ if (isset($_POST['send'])) {
         }
 }
 }
+if (isset($_POST['btn_delete'])){
+    $id = intval($_POST['id']);
+    // echo gettype($id);
+    if (delete('admins', $id)){
+            echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'> </script>";
+            // echo "console.log('reached the update function'";
+            echo " <script> Swal.fire({
+      position: 'top',
+      icon: 'success',
+      title: 'Succesfully Deleted',
+      showConfirmButton: true,
+      timer: 5000
+    });
+    </script>";
+
+    }
+}
 
 
 ?>
@@ -231,7 +248,9 @@ if (isset($_POST['send'])) {
         }
        function fillDeleteForm(id, username){
                $('#username').text(username);
-               $('#textUsername').val(id);
+               $('#valId').val(id);
+
+               console.log(typeof id)
         }
 
         // function notification(message, color) {

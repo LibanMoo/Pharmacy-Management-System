@@ -129,7 +129,7 @@ function updatePassword ($table, $id, $input){
 }
 function delete ($table, $id){
   global $conn;
-  $sql = "delete from $table where id=$id";
+  $sql = "delete from $table where admin_id=$id";
   $stm = $conn->prepare($sql);
   $result = $stm->execute();
   return $result ? true : false;
