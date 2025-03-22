@@ -16,7 +16,7 @@
                 <svg class="mx-auto mb-4 text-gray-400 w-12 h-12 dark:text-gray-200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11V6m0 8h.01M19 10a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
                 </svg>
-                <input class="bg-white" type="text" name="id" id="valId">
+                <input class="bg-white" type="hidden" name="id" id="valId">
                 <h3 class="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">Are you sure you want to delete <span id="username"></span></h3>
                 <button data-modal-hide="popup-modal" type="submit" name="btn_delete" class="text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium max-sm:font-normal rounded-lg text-sm inline-flex items-center px-5 py-2.5 max-sm:px-2 max-sm:py-2 text-center">
                     Yes, I'm sure
