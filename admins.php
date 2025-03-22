@@ -230,8 +230,8 @@ if (isset($_POST['send'])) {
             });
         }
        function fillDeleteForm(id, username){
-               $('username').text(username);
-               $('textUsername').val(id);
+               $('#username').text(username);
+               $('#textUsername').val(id);
         }
 
         // function notification(message, color) {
