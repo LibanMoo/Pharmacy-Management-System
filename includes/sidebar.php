@@ -19,9 +19,9 @@
             <a class="flex gap-2 items-center" href="./admins.php"><i class="fa-solid fa-user"></i>
                 <span>Admins</span></a>
         </div>
-        <div class="Customers h-8 focus:bg-slate-400 pl-3 rounded flex items-center">
-            <a class="flex gap-2 items-center" href="#"><i class="fa-solid fa-users"></i>
-                <span class="text-[var(--color-info-dark)]">Customers</span></a>
+        <div class="Customers h-8 focus:bg-slate-400 pl-3 rounded flex items-center hover:bg-[var(--color-primary)] hover:text-[var(--color-white)]">
+            <a class="flex gap-2 items-center" href="customers.php"><i class="fa-solid fa-users"></i>
+                <span>Customers</span></a>
         </div>
         <div class="dashboard h-8 color-third pl-3 rounded flex items-center">
             <a class="flex gap-2 items-center" href="../index.php"><i class="fa-solid fa-warehouse"></i>
