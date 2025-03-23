@@ -17,10 +17,10 @@ include "./includes/sidebar.php";
   <div class="containerr ml-[16.6%] w-full h-screen flex bg-[var(--color-background)] max-md:ml-0">
   <div class="content w-[84%] flex flex-col gap-[10%] max-md:w-[100%] max-md:justify-center">
    <div class="chart flex gap-[4%] max-md:flex-col max-md:justify-center ">
-  <div class="canvas shadow-md p-[2%] rounded w-[50%] max-md:w-[95%]">
+  <div class="canvas shadow-md hover:shadow-none p-[2%] rounded w-[50%] max-md:w-[95%]">
   <canvas id="myChart"></canvas>
   </div>
-  <div class="canvas1 shadow-md p-[2%] rounded w-[50%] max-md:w-[95%]">
+  <div class="canvas1 shadow-md hover:shadow-none -[2%] rounded w-[50%] max-md:w-[95%]">
   <canvas id="myChart1"></canvas>
   </div>
 </div>
