@@ -113,7 +113,7 @@ if (isset($_POST['btn_delete'])){
             <div class="admin w-[13%] h-[7%] bg-[var(--color-primary)] flex items-center justify-center rounded hover:cursor-pointer max-sm:w-[35%] max-md:w-[25%] ">
                 <button onclick="callModal()" class="hover:cursor-pointer text-[var(--color-white)] text-bold">Add Admin</button>
             </div>
-            <table id="myTable" class="row-border hover">
+            <table id="myTable" class="stripe row-border hover">
                 <thead>
                     <tr>
                         <th>Username</th>
