@@ -68,7 +68,7 @@ if (isset($_POST['send'])) {
       icon: 'success',
       title: 'Your work has been saved',
       showConfirmButton: true,
-      timer: 5000
+    //   timer: 5000
     });
     </script>";
         }
