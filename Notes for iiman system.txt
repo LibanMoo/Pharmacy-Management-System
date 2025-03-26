@@ -5,8 +5,9 @@ customer_id int primary key autoincrement,
 customer_name varchar (50),
 customer_number,
 address text,
-damiin boolean,
+damiin tinyint,
 damiin_id foreign key (damiin.damiin_id)
+damiin_name varchar(250),
 date date, 
 time time
 ),
