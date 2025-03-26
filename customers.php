@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body class="bg-[var(--color-background)]">
     <div class="containerr">
         <div class="sidebar">
             <?php include './includes/sidebar.php'; ?>
