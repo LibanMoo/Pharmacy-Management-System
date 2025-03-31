@@ -55,5 +55,19 @@
     </div>
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/datatables/dataTables.js"></script>
+
+    <script>
+           $(document).ready(function() {
+            $('#myTable').DataTable({
+                pagingType: 'full',
+                language: {
+                    searchPlaceholder: "...search"
+                }
+
+
+            });
+
+        });
+    </script>
 </body>
 </html>
