@@ -53,5 +53,7 @@
         </div>
         </div>
     </div>
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/datatables/dataTables.js"></script>
 </body>
 </html>
