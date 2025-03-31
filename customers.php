@@ -36,10 +36,10 @@
                         <tr>
                             <td><?= $customer['customer_name']; ?></td>
                             <td><?= $customer['customer_number'] ?></td>
-                            <td><?= $admin['address'] ?></td>
-                            <td><?= $admin['address'] ?></td>
-                            <td><?= $admin['date'] ?></td>
-                            <td><?= $admin['time'] ?></td>
+                            <td><?= $customer['address'] ?></td>
+                            <td><?= $customer['address'] ?></td>
+                            <td><?= $customer['date'] ?></td>
+                            <td><?= $customer['time'] ?></td>
                             <td class="flex h-full gap-5 text-3xl">
                                 <div class="edit text-[var(--color-primary)] cursor-pointer"><i onclick="callModal();fillForm(<?= $admin['admin_id']; ?>);" class="fa-solid fa-pen-to-square"></i></div>
                                 <div class="delete text-[var(--color-danger)] cursor-pointer">
