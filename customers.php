@@ -27,6 +27,7 @@
                         <th>Number</th>
                         <th>Address </th>
                         <th>Total</th>
+                        <th>Admin Username</th>
                         <th>Date</th>
                         <th>Time</th>
                         <th>Actions</th>
@@ -42,6 +43,7 @@
                             <td><?= $customer['customer_number'] ?></td>
                             <td><?= $customer['address'] ?></td>
                             <td><?= $deen['total'] ?></td>
+                            <td><?= $customer['admin_username'] ?></td>
                             <td><?= $customer['date'] ?></td>
                             <td><?= $customer['time'] ?></td>
                             <td class="flex h-full gap-5 text-3xl">
