@@ -8,6 +8,8 @@ address text,
 damiin tinyint,
 damiin_id foreign key (damiin.damiin_id)
 damiin_name varchar(250),
+admin_username varchar(11),
+foreign key(admin_username) references admins(username) on update cascade,
 date date, 
 time time
 ),
