@@ -34,12 +34,14 @@
                 </thead>
                 <tbody>
                     <?php foreach (read('customers') as $customer) {
+                        foreach(getSum('deemaha', 'amount', 'total', $customer['customer_id']) as $deen){
+                    }
                     ?>
                         <tr>
                             <td><?= $customer['customer_name']; ?></td>
                             <td><?= $customer['customer_number'] ?></td>
                             <td><?= $customer['address'] ?></td>
-                            <td><?= $customer['address'] ?></td>
+                            <td><?= $deen['total'] ?></td>
                             <td><?= $customer['date'] ?></td>
                             <td><?= $customer['time'] ?></td>
                             <td class="flex h-full gap-5 text-3xl">
