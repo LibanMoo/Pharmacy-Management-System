@@ -17,9 +17,9 @@ function read_limit($table, $order_entity, $limit){
   $result = $conn->query("select * from $table order by $order_entity desc limit $limit ; ")->fetchAll(PDO::FETCH_ASSOC);
   return $result;
 }
-function getSum($table, $column, $name){
+function getSum($table, $column, $name, $userId){
   global $conn;
-  $result = $conn->query("select sum($column) as $name from $table ; ")->fetchAll(PDO::FETCH_ASSOC);
+  $result = $conn->query("select sum($column) as $name from $table where customer_id = $userId ; ")->fetchAll(PDO::FETCH_ASSOC);
   return $result;
 }
 function escape($input){
