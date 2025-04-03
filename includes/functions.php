@@ -22,6 +22,11 @@ function getSum($table, $column, $name, $userId){
   $result = $conn->query("select sum($column) as $name from $table where customer_id = $userId ; ")->fetchAll(PDO::FETCH_ASSOC);
   return $result;
 }
+function getName ($table, $name){
+  global $conn;
+  $result = $conn->query("Select $name from $table")->fetchAll(PDO::FETCH_ASSOC);
+  return $result;
+}
 function escape($input){
     return htmlspecialchars($input);
 }
