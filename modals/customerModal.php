@@ -19,12 +19,16 @@
                 <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" method="post">
                     <h3 id="addAdmin" class="text-xl font-medium text-gray-900 dark:text-white">Register a new Admin</h3>
                     <div>
-                        <label for="username" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Your Username</label>
-                        <input type="text" name="username" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Lii" required="">
+                        <label for="username" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Customer Name</label>
+                        <input type="text" name="customerName" id="customerName" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Liban" required="">
                     </div>
                     <div>
-                        <label for="name" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Your Name</label>
-                        <input type="name" name="name" id="name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Name" required="">
+                        <label for="name" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Address</label>
+                        <input type="text" name="customerAddress" id="customerAddress" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Madiina" required="">
+                    </div>
+                    <div>
+                        <label for="name" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Customer Number</label>
+                        <input type="number" name="customerNumber" id="customerNumber" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="+252612569167" required="">
                     </div>
                     <div>
                         <input type="hidden" name="action" id="action" value="insert" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Name" required="">
