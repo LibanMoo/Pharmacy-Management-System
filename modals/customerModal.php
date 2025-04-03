@@ -28,7 +28,7 @@
                     </div>
                     <div>
                         <label for="name" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Customer Number</label>
-                        <input type="number" name="customerNumber" id="customerNumber" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="+252612569167" required="">
+                        <input type="number" name="customerNumber" id="customerNumber" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-moz-inner-spin-button]:appearance-none [&::-moz-outer-spin-button]:appearance-none" placeholder="+252612569167" required="">
                     </div>
                     <div>
                         <label for="role" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Role</label>
