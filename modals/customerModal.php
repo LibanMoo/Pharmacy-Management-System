@@ -1,5 +1,6 @@
 <!-- <link rel="stylesheet" href="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.min.css" /> -->
 <link rel="stylesheet" href="../output.css">
+<script src="../lib/jquery/jquery.min.js"></script>
 
 <!-- This is an example component -->
 <div id="modalContainer" class="w-full h-full fixed top-0 left-0 z-10 flex justify-center items-center bg-[var(--color-transparent)]">
