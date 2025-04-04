@@ -72,6 +72,9 @@
            dataType: 'json',
            success: (data)=>{
                  let validatedOption = $('#validatedOption').value;
+                 if (data.valid){
+                    validatedOption.value = data;
+                 }
            }
         })
     }
