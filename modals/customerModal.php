@@ -69,6 +69,7 @@
            type: 'POST',
            async: false,
            data: {customer: customer},
+           dataType: 'json',
            success: (data)=>{
                  let validatedOption = $('#validatedOption').value;
            }
