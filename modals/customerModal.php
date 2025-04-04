@@ -69,8 +69,7 @@
            type: 'POST',
            async: false,
            data: {customer: customer},
-           
-           success: function(data){
+           success: (data)=>{
                  let validatedOption = $('#validatedOption').value;
            }
         })
