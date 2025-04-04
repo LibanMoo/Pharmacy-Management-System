@@ -65,7 +65,7 @@
         let customer = $(this).val();
       })
         $.ajax({
-           url: '../includes/validateCustomer.php',
+           url: '../includes/validate.php',
            type: 'POST',
            async: false,
            data: {customer: customer},
