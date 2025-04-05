@@ -12,6 +12,12 @@ function read_where($table, $condition)
   $result = $conn->query("select * from $table where $condition ")->fetchAll(PDO::FETCH_ASSOC);
   return $result;
 }
+function read_where_limit($table, $condition, $limit)
+{
+  global $conn;
+  $result = $conn->query("select * from $table where $condition ")->fetchAll(PDO::FETCH_ASSOC);
+  return $result;
+}
 function read_limit($table, $order_entity, $limit){
   global $conn;
   $result = $conn->query("select * from $table order by $order_entity desc limit $limit ; ")->fetchAll(PDO::FETCH_ASSOC);
