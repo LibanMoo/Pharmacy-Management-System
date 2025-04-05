@@ -44,8 +44,7 @@
             <div>
                 <label for="datalist" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Damiin Name</label>
                 <input list="customers" name="damiinInput" id="damiinInput" onkeyup="validateCustomer()" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-moz-inner-spin-button]:appearance-none [&::-moz-outer-spin-button]:appearance-none" placeholder="Ali Abdi" required="">
-                <datalist id="customers">
-                    <option id="validationOption" value=""></option>
+                <datalist id="customersDatalist">
                     <!-- <option id="validationOption" value="haa">haa</option> -->
                  </datalist>
             </div>
@@ -61,21 +60,29 @@
 
 <script>
     function validateCustomer(){
-      $('#customerInput').on('keyup', function(){
+      $('#damiinInput').on('keyup', function(){
         let customer = $(this).val();
-      })
+        let datalist = $('#customersDatalist');
+       console.log('hello')
         $.ajax({
            url: '../includes/validate.php',
            type: 'POST',
-           async: false,
+           async: true,
            data: {customer: customer},
            dataType: 'json',
            success: (data)=>{
-                 let validatedOption = $('#validatedOption').value;
+            console.log('reached here')
+         
+                 let validatedOption = $('#validatedOption').val();
                  if (data.valid){
-                    validatedOption.value = data;
+                    console.log(data.customer)
+                    // validatedOption = data;
                  }
+           },
+           error: function(err) {
+            console.error(err)
            }
         })
+    })
     }
 </script>
