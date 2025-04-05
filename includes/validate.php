@@ -1,16 +1,28 @@
-<?php
-    header('content-type: application/json');
-    if (isset($_POST['damiinInput'])){
-      $customer = $_POST['damiinInput'];
-    $result = read_where('customers', "customer_name = $customer");
-    
-    if ($result){
-        json_encode($result);
-    }
-    else {
-        echo 'No data found';
-    }
-    
-}
-
+<?php include '../includes/functions.php';
+   header('Content-Type: application/json');
+   
+   if (isset($_POST['customer'])) {
+       $customer = $_POST['customer'];
+   
+       // Make sure the value is safely quoted
+       $result = read_where('customers', "customer_name = '$customer'");
+   
+       if ($result) {
+           echo json_encode([
+               "valid" => true,
+               "customer" => $result
+           ]);
+       } else {
+           echo json_encode([
+               "valid" => false,
+               "message" => "Customer not found"
+           ]);
+       }
+   } else {
+       echo json_encode([
+           "valid" => false,
+           "message" => "No customer sent"
+       ]);
+   }
+   
 ?>

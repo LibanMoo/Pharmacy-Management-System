@@ -62,24 +62,26 @@
     function validateCustomer(){
       $('#damiinInput').on('keyup', function(){
         let customer = $(this).val();
+        console.log(customer)
         let datalist = $('#customersDatalist');
        console.log('hello')
         $.ajax({
            url: '../includes/validate.php',
            type: 'POST',
-           async: true,
            data: {customer: customer},
            dataType: 'json',
-           success: (data)=>{
+           success: (result)=>{
             console.log('reached here')
+            console.log(result)
          
-                 let validatedOption = $('#validatedOption').val();
-                 if (data.valid){
-                    console.log(data.customer)
-                    // validatedOption = data;
-                 }
+                //  let validatedOption = $('#validatedOption').val();
+                //  if (data.valid){
+                //     console.log(result)
+                //     // validatedOption = data;
+                //  }
            },
            error: function(err) {
+            console.log('reached the error')
             console.error(err)
            }
         })
