@@ -103,7 +103,7 @@
                     result.customer.forEach((element)=>{
                      console.log('reached the foreach')
                      console.log(element['customer_name'])
-                     customersDatalist.append(`<option value="${element['customer_name']}"> ${element['customer_name']} </option>`);
+                     customersDatalist.append(`<option value="${element['customer_number']}"> ${element['customer_name']} </option>`);
                     })
                  }
            },
