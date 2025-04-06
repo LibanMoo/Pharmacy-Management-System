@@ -15,7 +15,7 @@ function read_where($table, $condition)
 function read_where_limit($table, $condition, $limit)
 {
   global $conn;
-  $result = $conn->query("select * from $table where $condition ")->fetchAll(PDO::FETCH_ASSOC);
+  $result = $conn->query("select * from $table where $condition limit $limit")->fetchAll(PDO::FETCH_ASSOC);
   return $result;
 }
 function read_limit($table, $order_entity, $limit){

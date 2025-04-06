@@ -5,7 +5,7 @@
        $customer = $_POST['customer'];
    
        // Make sure the value is safely quoted
-       $result = read_where_limit('customers', "customer_name = '$customer'", '3');
+       $result = read_where_limit('customers', "customer_name LIKE '%$customer%'", '3');
    
        if ($result) {
            echo json_encode([
