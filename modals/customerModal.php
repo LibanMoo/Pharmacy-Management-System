@@ -87,7 +87,7 @@
         let datalist = $('#customersDatalist');
        console.log('hello')
         $.ajax({
-           url: '../includes/validate.php',
+           url: './includes/validate.php',
            type: 'POST',
            data: {customer: customer},
            dataType: 'json',
