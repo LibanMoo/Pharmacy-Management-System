@@ -74,6 +74,29 @@
             });
 
         });
+
+        function callModal() {
+            $.ajax({
+                url: './modals/adminModal.php',
+                type: 'POST',
+                async: false,
+                success: function(data) {
+                    modalBox.html(data)
+                    // let modalContainer = $('#modalContainer');
+                    // console.log(modalContainer)
+                    console.log($('#close'))
+                    $('#close1').click(function() {
+                        // console.log("You clicked me")
+                        $('#modalContainer').hide();
+                    })
+                    console.log("reached in the modal")
+                },
+
+                error: function(error) {
+                    console.log(`Here is the error: ${error}`)
+                }
+            });
+        }
     </script>
 </body>
 </html>
