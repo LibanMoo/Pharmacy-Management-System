@@ -16,7 +16,7 @@
         <div class="sidebar">
             <?php include './includes/sidebar.php'; ?>
         </div>
-        <div class="content w-full ml-[17%]">
+        <div class="content w-full ml-[17%] max-md:ml-0">
         <div class="admin w-[13%] h-[7%] bg-[var(--color-primary)] flex items-center justify-center rounded hover:cursor-pointer max-sm:w-[35%] max-md:w-[25%] ">
                 <button onclick="callModal()" class="hover:cursor-pointer text-[var(--color-white)] text-bold">Add Customer</button>
             </div>
@@ -58,7 +58,7 @@
             </table>
         </div>
         </div>
-        <div class="modalBox"></div>
+        <div id="modalBox"></div>
     </div>
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/datatables/dataTables.js"></script>
