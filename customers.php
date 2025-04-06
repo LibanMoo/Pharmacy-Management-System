@@ -79,10 +79,10 @@
         const modalBox = $('#modalBox');
         console.log(modalBox)
 
-        
+
         function callModal() {
             $.ajax({
-                url: './modals/adminModal.php',
+                url: './modals/customerModal.php',
                 type: 'POST',
                 async: false,
                 success: function(data) {
