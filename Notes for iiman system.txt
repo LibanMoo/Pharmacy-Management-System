@@ -3,7 +3,7 @@ Notes for iiman system
 create table customers (
 customer_id int primary key autoincrement,
 customer_name varchar (50),
-customer_number,
+customer_number varchar(14) unique,
 address text,
 damiin tinyint,
 damiin_id foreign key (damiin.damiin_id)
