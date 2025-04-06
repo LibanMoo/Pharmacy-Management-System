@@ -58,6 +58,7 @@
             </table>
         </div>
         </div>
+        <div class="modalBox"></div>
     </div>
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/datatables/dataTables.js"></script>
@@ -74,7 +75,11 @@
             });
 
         });
+       
+        const modalBox = $('#modalBox');
+        console.log(modalBox)
 
+        
         function callModal() {
             $.ajax({
                 url: './modals/adminModal.php',
