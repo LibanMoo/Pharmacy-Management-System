@@ -35,10 +35,10 @@
             </div>
             <div>
                 <label for="role" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Damiin</label>
-                <select name="role" id="role" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
+                <select name="damiinOptions" id="damiinOptions" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white">
                     <option selected disabled>--- Damiin ---</option>
                     <option id="optionHaa" value="1">Haa</option>
-                    <option id="OptionMaya" value="0">Maya</option>
+                    <option selected id="OptionMaya" value="0">Maya</option>
                 </select>
             </div>
             <div id="damiinRow" class="hidden">
@@ -63,11 +63,23 @@
 
     const optionHaa = $('#optionHaa'),
           optionMaya = $('#optionMaya'),
-          damiinRow = $('#damiinRow');
+          damiinRow = $('#damiinRow'),
+          damiinOptions = $('#damiinOptions');
 
-          if (optionHaa.select){
-          damiinRow.removeClass('hidden')
-          }
+    damiinOptions.on('change', (e)=>{
+        console.log('here')
+        const selectedValue = e.target.value;
+        console.log(selectedValue);
+        if (selectedValue == '1'){
+            console.log('reached here')
+            damiinRow.removeClass('hidden');
+        }
+        else if (selectedValue == '0'){
+            console.log('reached the else')
+           damiinRow.addClass('hidden')
+        }
+    })
+
     function validateCustomer(){
       $('#damiinInput').on('keyup', function(){
         let customer = $(this).val();
