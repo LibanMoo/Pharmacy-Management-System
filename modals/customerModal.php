@@ -60,6 +60,9 @@
 <!-- <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script> -->
 
 <script>
+
+    const optionHaa = $('#optionHaa'),
+          optionMaya = $('#optionMaya');
     function validateCustomer(){
       $('#damiinInput').on('keyup', function(){
         let customer = $(this).val();
