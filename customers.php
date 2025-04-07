@@ -1,5 +1,20 @@
 <?php include './includes/init.php';
       include './includes/header.php';
+
+
+      if (isset($_POST['send'])){
+        $get_date = new DateTime("now", new DateTimeZone("Africa/Mogadishu"));
+        $date = $get_date->format('Y-m-d');
+        $time = $get_date->format('H:i:s');
+
+        $info = [
+             'customer_name' => $_POST['customer_name'],
+             'customer_address' => $_POST['customer_address'],
+             'customer_number' => $_POST['customer_number'],
+             'damiinOptions' => $_POST['damiinOptions'],
+             'damiinInput' => $_POST['damiinInput']
+        ];
+      }
 ?>
 
 <!DOCTYPE html>
