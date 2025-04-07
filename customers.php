@@ -12,7 +12,9 @@
              'customer_address' => $_POST['customer_address'],
              'customer_number' => $_POST['customer_number'],
              'damiinOptions' => $_POST['damiinOptions'],
-             'damiinInput' => $_POST['damiinInput']
+             'damiinInput' => $_POST['damiinInput'],
+             'date'=> $date,
+             'time'=> $time
         ];
       }
 ?>
