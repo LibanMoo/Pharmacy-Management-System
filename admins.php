@@ -107,7 +107,7 @@ if (isset($_POST['btn_delete'])){
 </head>
 
 <body class="bg-[var(--color-background)]">
-    <div class="containerr w-[100%] h-screen  max-md:ml-0 max-md:w-full max-md:pl-[3%] flex">
+    <div class="containerr w-[100%] h-screen max-md:ml-0 max-md:w-full max-md:pl-[3%] flex">
         <div class="sidebar"><?= include './includes/sidebar.php'; ?></div>
         <div class="content w-full ml-[16.6%] max-md:ml-0">
             <div class="admin w-[13%] h-[7%] bg-[var(--color-primary)] flex items-center justify-center rounded hover:cursor-pointer max-sm:w-[35%] max-md:w-[25%] ">
@@ -146,7 +146,7 @@ if (isset($_POST['btn_delete'])){
             </table>
         </div>
         <div class="modalBox" id="modalBox"></div>
-        <div class="notifications"></div>
+        <!-- <div class="notifications"></div> -->
     </div>
     <script src="./lib/jquery/jquery.min.js"></script>
     <script src="./lib/datatables/dataTables.js"></script>
