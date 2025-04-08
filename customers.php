@@ -16,6 +16,9 @@
                 'date'=> $date,
                 'time'=> $time
            ];
+           if(insert('customers', $info)){
+
+           };
          }
          else {
             $info = [
@@ -26,6 +29,9 @@
                 'date'=> $date,
                 'time'=> $time
            ];
+           if(insert('customers', $info)){
+            
+           };
          }
 
       
