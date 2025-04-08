@@ -22,9 +22,9 @@
          }
          else {
             $info = [
-                'customer_name' => $_POST['customer_name'],
-                'customer_address' => $_POST['customer_address'],
-                'customer_number' => $_POST['customer_number'],
+                'customer_name' => $_POST['customerName'],
+                'customer_address' => $_POST['customerAddress'],
+                'customer_number' => $_POST['customerNumber'],
                 'damiinOptions' => $_POST['damiinOptions'],
                 'date'=> $date,
                 'time'=> $time
