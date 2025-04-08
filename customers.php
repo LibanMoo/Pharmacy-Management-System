@@ -6,16 +6,29 @@
         $get_date = new DateTime("now", new DateTimeZone("Africa/Mogadishu"));
         $date = $get_date->format('Y-m-d');
         $time = $get_date->format('H:i:s');
+         if(isset($_POST['damiinInput'])){
+            $info = [
+                'customer_name' => $_POST['customer_name'],
+                'customer_address' => $_POST['customer_address'],
+                'customer_number' => $_POST['customer_number'],
+                'damiinOptions' => $_POST['damiinOptions'],
+                'damiinInput' => $_POST['damiinInput'],
+                'date'=> $date,
+                'time'=> $time
+           ];
+         }
+         else {
+            $info = [
+                'customer_name' => $_POST['customer_name'],
+                'customer_address' => $_POST['customer_address'],
+                'customer_number' => $_POST['customer_number'],
+                'damiinOptions' => $_POST['damiinOptions'],
+                'date'=> $date,
+                'time'=> $time
+           ];
+         }
 
-        $info = [
-             'customer_name' => $_POST['customer_name'],
-             'customer_address' => $_POST['customer_address'],
-             'customer_number' => $_POST['customer_number'],
-             'damiinOptions' => $_POST['damiinOptions'],
-             'damiinInput' => $_POST['damiinInput'],
-             'date'=> $date,
-             'time'=> $time
-        ];
+      
       }
 ?>
 
