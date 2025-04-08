@@ -8,8 +8,8 @@
         $time = $get_date->format('H:i:s');
          if(isset($_POST['damiinInput'])){
             $info = [
-                'customer_name' => $_POST['CustomerName'],
-                'customer_address' => $_POST['customerAddres'],
+                'customer_name' => $_POST['customerName'],
+                'customer_address' => $_POST['customerAddress'],
                 'customer_number' => $_POST['customerNumber'],
                 'damiinOptions' => $_POST['damiinOptions'],
                 'damiinInput' => $_POST['damiinInput'],
