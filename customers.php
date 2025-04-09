@@ -9,10 +9,11 @@
          if(isset($_POST['damiinInput'])){
             $info = [
                 'customer_name' => $_POST['customerName'],
-                'customer_address' => $_POST['customerAddress'],
+                'address' => $_POST['customerAddress'],
                 'customer_number' => $_POST['customerNumber'],
-                'damiinOptions' => $_POST['damiinOptions'],
-                'damiinInput' => $_POST['damiinInput'],
+                'damiin' => $_POST['damiinOptions'],
+                'damiin_name' => $_POST['damiinInput'],
+                'admin_username' => $_SESSION['admin_username'],
                 'date'=> $date,
                 'time'=> $time
            ];
@@ -23,9 +24,9 @@
          else {
             $info = [
                 'customer_name' => $_POST['customerName'],
-                'customer_address' => $_POST['customerAddress'],
+                'address' => $_POST['customerAddress'],
                 'customer_number' => $_POST['customerNumber'],
-                'damiinOptions' => $_POST['damiinOptions'],
+                'damiin' => $_POST['damiinOptions'],
                 'date'=> $date,
                 'time'=> $time
            ];
