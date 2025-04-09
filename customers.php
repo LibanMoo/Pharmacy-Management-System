@@ -166,6 +166,13 @@
                 }
             });
         }
+
+        function fillDeleteForm(id, username){
+               $('#username').text(username);
+               $('#valId').val(id);
+
+               console.log(typeof id)
+        }
     </script>
 </body>
 </html>
