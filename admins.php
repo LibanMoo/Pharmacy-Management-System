@@ -99,7 +99,7 @@ if (isset($_POST['btn_delete'])){
 
 <head>
     <link rel="stylesheet" href="output.css">
-    <link rel="stylesheet" href="./lib/datatables/dataTables.css">
+    <link rel="stylesheet" href="./lib/data/dataTables.css">
     <script src="https://kit.fontawesome.com/4be9701c6b.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -149,7 +149,7 @@ if (isset($_POST['btn_delete'])){
         <!-- <div class="notifications"></div> -->
     </div>
     <script src="./lib/jquery/jquery.min.js"></script>
-    <script src="./lib/datatables/dataTables.js"></script>
+    <script src="./lib/data/dataTables.js"></script>
     <script>
         $(document).ready(function() {
             $('#myTable').DataTable({

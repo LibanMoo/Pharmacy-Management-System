@@ -43,7 +43,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="output.css">
-    <link rel="stylesheet" href="lib/datatables/dataTables.css">
+    <link rel="stylesheet" href="lib/data/dataTables.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -91,7 +91,7 @@
                             <td class="flex h-full gap-5 text-3xl">
                                 <div class="view text-[var(--color-primary)] cursor-pointer"><i onclick="callModal();fillForm(<?= $admin['admin_id']; ?>);" class="fa-solid fa-eye"></i></div>
                                 <div class="delete text-[var(--color-danger)] cursor-pointer">
-                                    <i onclick="deleteModal();fillDeleteForm(<?= $admin['admin_id']?>, `<?= $admin['username'] ?>`);" class="fa-solid fa-trash"></i>
+                                    <i onclick="deleteModal();fillDeleteForm(<?= $admin['customer_id']?>, `<?= $admin['customer_name'] ?>`);" class="fa-solid fa-trash" > </i>
                                 </div>
                             </td>
                         </tr>
@@ -103,7 +103,7 @@
         <div id="modalBox"></div>
     </div>
     <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/datatables/dataTables.js"></script>
+    <script src="lib/data/dataTables.js"></script>
 
     <script>
            $(document).ready(function() {
