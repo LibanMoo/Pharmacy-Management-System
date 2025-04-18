@@ -13,6 +13,7 @@
                 'customer_number' => $_POST['customerNumber'],
                 'damiin' => $_POST['damiinOptions'],
                 'damiin_name' => $_POST['damiinInput'],
+                'user_ref' => $_SESSION['admin_id'],
                 'admin_username' => $_SESSION['admin_username'],
                 'date'=> $date,
                 'time'=> $time
