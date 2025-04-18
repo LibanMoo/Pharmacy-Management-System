@@ -28,6 +28,8 @@
                 'address' => $_POST['customerAddress'],
                 'customer_number' => $_POST['customerNumber'],
                 'damiin' => $_POST['damiinOptions'],
+                'admin_username' => $_SESSION['admin_username'],
+                'user_ref' => $_SESSION['admin_id'],
                 'date'=> $date,
                 'time'=> $time
            ];
