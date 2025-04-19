@@ -49,9 +49,9 @@
                     <option id="validationOption" value="hee">haa</option> -->
                  </datalist>
             </div>
-            <div>
-                <label for="number" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Customer Number</label>
-                <input type="text" name="damiinName" id="damiinName" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-moz-inner-spin-button]:appearance-none [&::-moz-outer-spin-button]:appearance-none" placeholder="+252612569167" required="">
+            <div id="damiinNameContent" class="hidden">
+                <label for="number" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Damiin Name</label>
+                <input type="text" name="damiinName" id="damiinName" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-moz-inner-spin-button]:appearance-none [&::-moz-outer-spin-button]:appearance-none" placeholder="Ahmed Ali" required="">
             </div>
             <div class="flex justify-between">
                 <div class="flex items-start">
@@ -68,7 +68,8 @@
     const optionHaa = $('#optionHaa'),
           optionMaya = $('#optionMaya'),
           damiinRow = $('#damiinRow'),
-          damiinOptions = $('#damiinOptions');
+          damiinNameContent = $('#damiinNameContent'),
+          damiinOptions = $('#damiinOptions'),
           damiinName = $('#damiinName');
 
     damiinOptions.on('change', (e)=>{
@@ -78,10 +79,12 @@
         if (selectedValue == '1'){
             console.log('reached here')
             damiinRow.removeClass('hidden');
+            damiinNameContent.removeClass('hidden');
         }
         else if (selectedValue == '0'){
             console.log('reached the else')
            damiinRow.addClass('hidden')
+           damiinNameContent.addClass('hidden')
         }
     })
 
@@ -105,10 +108,15 @@
                  if (result.valid){
                     customersDatalist.html('');
                     console.log(result)
+                    let damiinNameVal = '';
                     result.customer.forEach((element)=>{
                      console.log('reached the foreach')
                      console.log(element['customer_name'])
-                     customersDatalist.append(`<option value="${element['customer_number']}"> ${element['customer_name']} </option>`);
+                   if(customersDatalist.append(`<option id='customerNameOption' value="${element['customer_number']}"> ${element['customer_name']} </option>`)){
+                     damiinNameVal = element['customer_name'];
+                     damiinName.val(damiinNameVal);
+                   }  
+                     
                     })
                  }
            },

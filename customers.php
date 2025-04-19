@@ -7,12 +7,19 @@
         $date = $get_date->format('Y-m-d');
         $time = $get_date->format('H:i:s');
          if(isset($_POST['damiinInput'])){
+            $damiin_number = $_POST['damiinInput'];
+            if (read_where('customers', `customer_number = {$damiinInput}`)){
+                $damiin_name = $result['customer_name'];
+            }
+            else {
+                die('cant find the name of the customer');
+               }
             $info = [
                 'customer_name' => $_POST['customerName'],
                 'address' => $_POST['customerAddress'],
                 'customer_number' => $_POST['customerNumber'],
                 'damiin' => $_POST['damiinOptions'],
-                'damiin_name' => $_POST['damiinInput'],
+                'damiin_number' => $_POST['damiinInput'],
                 'user_ref' => $_SESSION['admin_id'],
                 'admin_username' => $_SESSION['admin_username'],
                 'date'=> $date,
@@ -20,7 +27,8 @@
            ];
            if(insert('customers', $info)){
 
-           };
+           }
+         
          }
          else {
             $info = [
