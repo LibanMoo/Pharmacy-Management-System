@@ -10,6 +10,11 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="sidebar">
+            <?php include "./includes/sidebar.php"; ?>
+        </div>
+        <!-- <div class="content"></div> -->
+    </div>
 </body>
 </html>
