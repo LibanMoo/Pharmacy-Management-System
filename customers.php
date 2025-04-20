@@ -6,9 +6,10 @@
         $get_date = new DateTime("now", new DateTimeZone("Africa/Mogadishu"));
         $date = $get_date->format('Y-m-d');
         $time = $get_date->format('H:i:s');
-         if(isset($_POST['damiinInput'])){
-            $damiin_number = $_POST['damiinInput'];
-            if (read_where('customers', `customer_number = {$damiinInput}`)){
+
+        $damiin_number = $_POST['damiinInput'];
+         if(isset($damiin_number)){
+            if (read_where('customers', `customer_number = "$damiin_number"`)){
                 $damiin_name = $result['customer_name'];
             }
             else {
@@ -20,6 +21,7 @@
                 'customer_number' => $_POST['customerNumber'],
                 'damiin' => $_POST['damiinOptions'],
                 'damiin_number' => $_POST['damiinInput'],
+                'damiin_name' => $damiin_name,
                 'user_ref' => $_SESSION['admin_id'],
                 'admin_username' => $_SESSION['admin_username'],
                 'date'=> $date,
