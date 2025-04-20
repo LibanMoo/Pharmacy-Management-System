@@ -143,9 +143,9 @@ function updatePassword ($table, $id, $input){
   $result = $stm->execute();
   return $result ? true : false;
 }
-function delete ($table, $id){
+function delete ($table, $condition){
   global $conn;
-  $sql = "delete from $table where admin_id=$id";
+  $sql = "delete from $table where $condition";
   $stm = $conn->prepare($sql);
   $result = $stm->execute();
   return $result ? true : false;
