@@ -41,6 +41,11 @@ if (isset($_POST['send'])) {
         };
     }
 }
+
+if (isset($_POST['btn_delete'])){
+    $customer_id = $_POST['id'];
+    delete('customers', "customer_id = $customer_id");
+}
 ?>
 
 <!DOCTYPE html>
