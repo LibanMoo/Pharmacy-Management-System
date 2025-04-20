@@ -9,12 +9,9 @@
 
         $damiin_number = $_POST['damiinInput'];
          if(isset($damiin_number)){
-            if (read_where('customers', `customer_number = "$damiin_number"`)){
-                $damiin_name = $result['customer_name'];
-            }
-            else {
-                die('cant find the name of the customer');
-               }
+           foreach(read_where('customers', "customer_number = $damiin_number") as $damiinNum){
+            $damiin_name = $damiinNum['customer_name'];
+           }
             $info = [
                 'customer_name' => $_POST['customerName'],
                 'address' => $_POST['customerAddress'],
