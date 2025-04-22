@@ -28,11 +28,10 @@
             <table id="myTable" class="stripe row-border hover">
                 <thead>
                     <tr>
-                        <th>Name</th>
-                        <th>Number</th>
-                        <th>Address </th>
+                        <th>Amount</th>
+                        <th>Description</th>
                         <th>Total</th>
-                        <th>Admin Username</th>
+                        <th>Admin Username </th>
                         <th>Date</th>
                         <th>Time</th>
                         <th>Actions</th>
