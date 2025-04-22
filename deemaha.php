@@ -10,11 +10,11 @@
     <title>Document</title>
 </head>
 <body class="bg-[var(--color-background)]">
-    <div class="container">
+    <div class="container flex">
         <div class="sidebar">
             <?php include "./includes/sidebar.php"; ?>
         </div>
-        <!-- <div class="content"></div> -->
+        <div class="content"></div>
     </div>
 </body>
 </html>
