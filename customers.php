@@ -83,7 +83,7 @@ if (isset($_POST['btn_delete'])){
                 </thead>
                 <tbody>
                     <?php foreach (read('customers') as $customer) {
-                        foreach (getSum('deemaha', 'amount', 'total', $customer['customer_id']) as $deen) {
+                        foreach (getSum('deemaha', 'amount', 'total', "customer_id = {$customer['customer_id']}") as $deen) {
                             // echo $deen['total'];
                             if (empty($deen['total'])) {
                                 $deen['total'] = 0;
