@@ -1,5 +1,7 @@
 <?php include "./includes/init.php";
       include "./includes/header.php";
+
+      $id = $_GET['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,8 +40,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach (read('customers') as $customer) {
-                        foreach (getSum('deemaha', 'amount', 'total', $customer['customer_id']) as $deen) {
+                    <?php foreach (read_where('deemaha', "customer_id = $id") as $deen) {
+                        foreach (getSum('deemaha', 'amount', 'total', "customer_id = $id") as $total) {
                             // echo $deen['total'];
                             if (empty($deen['total'])) {
                                 $deen['total'] = 0;
@@ -48,13 +50,12 @@
                         }
                     ?>
                         <tr>
-                            <td><?= $customer['customer_name']; ?></td>
-                            <td><?= $customer['customer_number'] ?></td>
-                            <td><?= $customer['address'] ?></td>
-                            <td>$<?= $deen['total'] ?></td>
-                            <td><?= $customer['admin_username'] ?></td>
-                            <td><?= $customer['date'] ?></td>
-                            <td><?= $customer['time'] ?></td>
+                            <td><?= $deen['amount']; ?></td>
+                            <td><?= $deen['description'] ?></td>
+                            <td>$<?= $total['total'] ?></td>
+                            <td><?= $deen['admin_username'] ?></td>
+                            <td><?= $deen['date'] ?></td>
+                            <td><?= $deen['time'] ?></td>
                             <td class="flex h-full gap-5 text-3xl">
                                 <div class="view text-[var(--color-primary)] cursor-pointer"><i onclick="callModal();fillForm(<?= $admin['admin_id']; ?>);" class="fa-solid fa-eye"></i></div>
                                 <div class="delete text-[var(--color-danger)] cursor-pointer">
