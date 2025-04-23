@@ -40,7 +40,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach (read_where('deemaha', "customer_id = $id") as $deen) {
+                    <?php $amount_cleaned = "";
+                    foreach (read_where('deemaha', "customer_id = $id") as $deen) {
+                        $amount_cleaned = str_replace("-", "", $deen['amount']);
+
                         foreach (getSum('deemaha', 'amount', 'total', "customer_id = $id") as $total) {
                             // echo $deen['total'];
                             if (empty($deen['total'])) {
@@ -50,7 +53,7 @@
                         }
                     ?>
                         <tr>
-                            <td><?= $deen['amount']; ?></td>
+                            <td><?= $amount_cleaned; ?></td>
                             <td><?= $deen['description'] ?></td>
                             <td>$<?= $total['total'] ?></td>
                             <td><?= $deen['admin_username'] ?></td>
