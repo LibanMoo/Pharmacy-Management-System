@@ -79,6 +79,8 @@
           $(document).ready(function() {
             $('#myTable').DataTable({
                 pagingType: 'full',
+                order: [],
+                select: true,
                 language: {
                     searchPlaceholder: "...search"
                 }
