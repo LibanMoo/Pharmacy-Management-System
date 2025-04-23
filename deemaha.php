@@ -18,7 +18,7 @@
             <?php include "./includes/sidebar.php"; ?>
         </div>
         <div class="content w-full ml-[17%] flex flex-col  max-md:ml-0">
-            <div class="deemaha w-full flex justify-between h-[8%] pr-4">
+            <div class="deemaha w-full flex justify-between h-[8%] pr-4 max-md:pl-4">
         <div class="Deen_ku_dar w-[13%]  bg-[var(--color-primary)] flex items-center justify-center rounded hover:cursor-pointer max-sm:w-[35%] max-md:w-[25%] ">
                 <button onclick="callModal()" class="hover:cursor-pointer text-[var(--color-white)] text-bold">Deen Ku dar</button>
             </div>
@@ -50,7 +50,7 @@
                                 $deen['total'] = 0;
                                 // echo $deen['total'];
                             }
-                        }
+                       
                     ?>
                         <tr>
                             <td><?= $amount_cleaned; ?></td>
@@ -66,7 +66,7 @@
                                 </div>
                             </td>
                         </tr>
-                    <?php }; ?>
+                    <?php  }}; ?>
                 </tbody>
             </table>
             </div>
