@@ -60,7 +60,7 @@
                             <td><?= $deen['date'] ?></td>
                             <td><?= $deen['time'] ?></td>
                             <td class="flex h-full gap-5 text-3xl">
-                                <div class="view text-[var(--color-primary)] cursor-pointer"><i onclick="callModal();fillForm(<?= $admin['admin_id']; ?>);" class="fa-solid fa-eye"></i></div>
+                                <div class="view text-[var(--color-primary)] cursor-pointer"><i onclick="callModal();fillForm(<?= $admin['admin_id']; ?>);" class="fa-solid fa-pen-to-square"></i></div>
                                 <div class="delete text-[var(--color-danger)] cursor-pointer">
                                     <i onclick="deleteModal();fillDeleteForm(<?= $customer['customer_id'] ?>, `<?= $customer['customer_name'] ?>`);" class="fa-solid fa-trash"> </i>
                                 </div>
