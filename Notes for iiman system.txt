@@ -57,6 +57,8 @@ transaction_type Enum('barrow', 'payment') not null,
 customer_id foreign key references (customers.customer_id) not null,
 product foreign key references (products.product_id),
 description text,
+admin_username varchar(11),
+foreign key (admin_username) references admins(admin_id),
 user_id int foreign key (admins.admin_id),
 date date,
 time time
