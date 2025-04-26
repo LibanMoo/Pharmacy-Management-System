@@ -19,8 +19,8 @@
                 <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" method="post">
                     <h3 id="addAdmin" class="text-xl font-medium text-gray-900 dark:text-white">Register a new Admin</h3>
                     <div>
-                        <label for="username" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Your Username</label>
-                        <input type="text" name="username" id="username" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="Lii" required="">
+                        <label for="amount" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Amount</label>
+                        <input type="number" name="amount" id="amount" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-moz-inner-spin-button]:appearance-none [&::-moz-outer-spin-button]:appearance-none" required="">
                     </div>
                     <div>
                         <label for="name" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Your Name</label>
