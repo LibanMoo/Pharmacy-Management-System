@@ -43,8 +43,8 @@
                       </div>
                       <div id="productRow" class="hidden">
                         <label for="productName" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Product Name</label>
-                        <input list="deenDataList" type="text" name="productName" id="productName" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="product name" required="">
-                        <datalist id="deenDataList">
+                        <input list="productDatalist" type="text" name="productName" id="productName" onkeyup="validateProduct()" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="product name" required="">
+                        <datalist id="productDatalist">
 
                         </datalist>
                     </div>
@@ -67,7 +67,9 @@
                   productRow = $('#productRow'),
                   quantityRow = $('#quantityRow'),
                   total = $('#total'),
-                  amountLabel = $('#amountLabel');
+                  productName = $('#productName'),
+                  amountLabel = $('#amountLabel'),
+                  productDatalist = $('#productDatalist');
 
             productOptions.on('change', (e)=>{
         console.log('here')
@@ -89,6 +91,42 @@
            amountLabel.text('Amount');
         }
     })
+
+    function validateProduct(){
+      productName.on('keyup', function(){
+        let product = $(this).val();
+        console.log(product)
+       console.log('hello')
+        $.ajax({
+           url: './includes/validate.php',
+           type: 'POST',
+           data: {product: product},
+           dataType: 'json',
+           success: (result)=>{
+            console.log('reached here')
+            console.log(result)
+                 console.log(productDatalist)
+                 if (result.valid){
+                    productDatalist.html('');
+                    console.log(result)
+                    let damiinNameVal = '';
+                    result.product.forEach((element)=>{
+                     console.log('reached the foreach')
+                     console.log(element['product_name'])
+                   if(customersDatalist.append(`<option id='productNameOption' value="${element['product_name']}"> ${element['product_name']} </option>`)){
+                    
+                   }  
+                     
+                    })
+                 }
+           },
+           error: function(err) {
+            console.log('reached the error')
+            console.error(err)
+           }
+        })
+    })
+    }
         </script>
 
 <!-- <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script> -->
