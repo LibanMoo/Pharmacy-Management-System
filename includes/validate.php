@@ -2,9 +2,9 @@
    header('Content-Type: application/json');
 
    $product = $_POST['product'];
+   $customer = $_POST['customer'];
    
-   if (isset($_POST['customer'])) {
-       $customer = $_POST['customer'];
+   if (isset($customer)) {
    
        // Make sure the value is safely quoted
        $result = read_where_limit('customers', "customer_name OR customer_number LIKE '%$customer%'", '3');
