@@ -18,6 +18,10 @@
                 </div>
                 <form class="space-y-4 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" method="post">
                     <h3 id="addAdmin" class="text-xl font-medium text-gray-900 dark:text-white">Register a new Admin</h3>
+                    <div class="flex justify-end p-2 absolute top-9 right-2">
+                    <input type="text" value="0" name="total" id="total"  class="text-gray-400 w-5 bg-transparent  hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5  items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="authentication-modal">
+
+                </div>
                     <div>
                         <label for="amount" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Amount</label>
                         <input type="number" name="amount" id="amount" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-moz-inner-spin-button]:appearance-none [&::-moz-outer-spin-button]:appearance-none" placeholder="$" required="">
