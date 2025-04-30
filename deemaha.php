@@ -2,6 +2,16 @@
       include "./includes/header.php";
 
       $id = $_GET['id'];
+
+      if (isset($_POST['send'])){
+        $get_date = new DateTime("now", new DateTimeZone("Africa/Mogadishu"));
+        $date = $get_date->format('Y-m-d');
+        $time = $get_date->format('H:i:s');
+
+        if(isset($_POST['productName'])){
+            
+        }
+      }
 ?>
 <!DOCTYPE html>
 <html lang="en">
