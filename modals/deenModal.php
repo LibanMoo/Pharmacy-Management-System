@@ -18,7 +18,7 @@
                 </div>
                 <form class="space-y-4 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" method="post">
                     <h3 id="addAdmin" class="text-xl font-medium text-gray-900 dark:text-white">Register a new Admin</h3>
-                    <div class="flex justify-end p-2 absolute top-9 right-2">
+                    <div id="total" class="hidden p-2 absolute top-9 right-2">
                     <input type="text" value="0" name="total" id="total"  class="text-gray-400 w-5 bg-transparent  hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5  items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="authentication-modal">
 
                 </div>
