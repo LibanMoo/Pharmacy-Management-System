@@ -1,5 +1,7 @@
 <?php include '../includes/functions.php';
    header('Content-Type: application/json');
+
+   $product = $_POST['product'];
    
    if (isset($_POST['customer'])) {
        $customer = $_POST['customer'];
@@ -18,10 +20,18 @@
                "message" => "Customer not found"
            ]);
        }
+   } elseif(isset($product)){
+
+    $result = read_where_limit('products', "product_name LIKE '%$product%'", '3');
+
+       echo json_encode([
+           "valid" => true,
+           "product" => $result
+       ]);
    } else {
        echo json_encode([
            "valid" => false,
-           "message" => "No customer sent"
+           "message" => "No Data Found"
        ]);
    }
    
