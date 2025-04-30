@@ -55,7 +55,7 @@
                         <tr>
                             <td><?= $amount_cleaned; ?></td>
                             <td><?= $deen['description'] ?></td>
-                            <td>$<?= $total['amount'] ?></td>
+                            <td>$<?= $total['total'] ?></td>
                             <td><?= $deen['admin_username'] ?></td>
                             <td><?= $deen['date'] ?></td>
                             <td><?= $deen['time'] ?></td>
@@ -71,6 +71,7 @@
             </table>
             </div>
         </div>
+        <div id="modalBox" class="modalBox"></div>
     </div>
     <script src="lib/jquery/jquery.min.js"></script>
     <script src="lib/data/dataTables.js"></script>
@@ -90,7 +91,30 @@
 
         });
 
-        
+        const modalBox = $('#modalBox');
+
+        function callModal() {
+            $.ajax({
+                url: './modals/deenModal.php',
+                type: 'POST',
+                async: false,
+                success: function(data) {
+                    modalBox.html(data)
+                    // let modalContainer = $('#modalContainer');
+                    // console.log(modalContainer)
+                    console.log($('#close1'))
+                    $('#close1').click(function() {
+                        // console.log("You clicked me")
+                        $('#modalContainer').hide();
+                    })
+                    console.log("reached in the modal")
+                },
+
+                error: function(error) {
+                    console.log(`Here is the error: ${error}`)
+                }
+            });
+        }
     </script>
 </body>
 </html>
