@@ -41,6 +41,10 @@
                         <label for="productName" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Product Name</label>
                         <input type="text" name="productName" id="productName" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="product name" required="">
                     </div>
+                    <div id="quantityRow" class="hidden">
+                        <label for="quantity" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Quantity</label>
+                        <input type="text" name="quantity" id="quantity" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="description" required="">
+                    </div>
                     <div class="flex justify-between">
                         <div class="flex items-start">
                     <button id="register" name="send" type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register Transaction</button>
@@ -53,7 +57,8 @@
             const productOptions = $('#productOption'),
                   optionHaa = $('#optionHaa'),
                   optionMaya = $('#optionMaya'),
-                  productRow = $('#productRow');
+                  productRow = $('#productRow'),
+                  quantityRow = $('#quantityRow');
 
             productOptions.on('change', (e)=>{
         console.log('here')
@@ -62,10 +67,12 @@
         if (selectedValue == '1'){
             console.log('reached here')
             productRow.removeClass('hidden');
+            quantityRow.removeClass('hidden');
         }
         else if (selectedValue == '0'){
             console.log('reached the else')
            productRow.addClass('hidden')
+           quantityRow.addClass('hidden')
         }
     })
         </script>
