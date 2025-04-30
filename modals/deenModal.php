@@ -62,7 +62,8 @@
                   optionHaa = $('#optionHaa'),
                   optionMaya = $('#optionMaya'),
                   productRow = $('#productRow'),
-                  quantityRow = $('#quantityRow');
+                  quantityRow = $('#quantityRow'),
+                  total = $('#total');
 
             productOptions.on('change', (e)=>{
         console.log('here')
@@ -72,11 +73,13 @@
             console.log('reached here')
             productRow.removeClass('hidden');
             quantityRow.removeClass('hidden');
+            total.removeClass('hidden');
         }
         else if (selectedValue == '0'){
             console.log('reached the else')
            productRow.addClass('hidden')
            quantityRow.addClass('hidden')
+           total.addClass('hidden')
         }
     })
         </script>
