@@ -23,7 +23,7 @@
 
                 </div>
                     <div>
-                        <label for="amount" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Amount</label>
+                        <label id="amountLabel" for="amount" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Amount</label>
                         <input type="number" name="amount" id="amount" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white appearance-none [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [&::-moz-inner-spin-button]:appearance-none [&::-moz-outer-spin-button]:appearance-none" placeholder="$" required="">
                     </div>
                     <div>
@@ -63,7 +63,8 @@
                   optionMaya = $('#optionMaya'),
                   productRow = $('#productRow'),
                   quantityRow = $('#quantityRow'),
-                  total = $('#total');
+                  total = $('#total'),
+                  amountLabel = $('#amountLabel');
 
             productOptions.on('change', (e)=>{
         console.log('here')
@@ -74,12 +75,15 @@
             productRow.removeClass('hidden');
             quantityRow.removeClass('hidden');
             total.removeClass('hidden');
+            amountLabel.text('Discount');
         }
         else if (selectedValue == '0'){
             console.log('reached the else')
            productRow.addClass('hidden')
            quantityRow.addClass('hidden')
            total.addClass('hidden')
+           total.addClass('hidden')
+           amountLabel.text('Amount');
         }
     })
         </script>
