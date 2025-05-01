@@ -113,7 +113,7 @@
                     result.product.forEach((element)=>{
                      console.log('reached the foreach')
                      console.log(element['product_name'])
-                   if(customersDatalist.append(`<option id='productNameOption' value="${element['product_name']}"> ${element['product_name']} </option>`)){
+                   if(productDatalist.append(`<option id='productNameOption' value="${element['product_name']}"> ${element['product_name']} </option>`)){
                     
                    }  
                      
