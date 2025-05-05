@@ -108,10 +108,10 @@
                     result.customer.forEach((element)=>{
                      console.log('reached the foreach')
                      console.log(element['customer_name'])
-                   if(customersDatalist.append(`<option id='customerNameOption' value="${element['customer_number']}"> ${element['customer_name']} </option>`)){
-                     damiinNameVal = element['customer_name'];
-                     damiinName.val(damiinNameVal);
-                   }  
+                   customersDatalist.append(`<option id='customerNameOption' value="${element['customer_number']}"> ${element['customer_name']} </option>`)
+                    //  damiinNameVal = element['customer_name'];
+                    //  damiinName.val(damiinNameVal);
+                   
                      
                     })
                  }
